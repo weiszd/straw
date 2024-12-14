@@ -48,6 +48,7 @@ Thumbs.db
 # PyPi bins #
 #############
 dist
+build
 env
 hic_straw.egg-info
 

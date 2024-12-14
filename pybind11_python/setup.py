@@ -220,11 +220,11 @@ Please install the required development packages listed above and try again."""
             )
         
         # Create the build directory if it doesn't exist
-        build_lib = os.path.join(self.build_lib, 'hicstraw')
+        build_lib = self.build_lib
         os.makedirs(build_lib, exist_ok=True)
         
-        # Copy pre-built binary to build directory
-        shutil.copy2(prebuilt_path, os.path.join(build_lib, 'hicstraw.so'))
+        # Copy pre-built binary directly to build directory, not in a package subdirectory
+        shutil.copy2(prebuilt_path, os.path.join(build_lib, os.path.basename(prebuilt_path)))
         emit_warning(f"Using pre-built binary: {prebuilt_path}")
 
 
